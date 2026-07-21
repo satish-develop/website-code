@@ -153,29 +153,35 @@ const deliverySignals = [
   },
 ]
 
-const careerTracks = [
+const careerBenefits = [
   {
-    icon: Code2,
-    title: 'Software & AI Engineers',
-    text: 'Build web apps, APIs, AI-enabled workflows, integrations, dashboards, and internal platforms for business clients.',
+    icon: Sparkles,
+    title: 'Modern technology exposure',
+    text: 'Work around AI automation, cloud platforms, data systems, software products, firmware, QA, and DevOps instead of one narrow track.',
   },
   {
-    icon: Database,
-    title: 'Cloud & Data Engineers',
-    text: 'Design cloud architecture, data pipelines, analytics systems, automation, and reliable operating workflows.',
+    icon: Users,
+    title: 'Early team impact',
+    text: 'Join while the company is still growing, where your ideas can shape delivery standards, engineering culture, and client experience.',
   },
   {
-    icon: Cpu,
-    title: 'Firmware & QA Specialists',
-    text: 'Support embedded systems, Linux services, device validation, CI/CD, release testing, and automation.',
+    icon: TrendingUp,
+    title: 'Room to grow',
+    text: 'Take ownership, learn across domains, and build a portfolio of real business systems as the organization expands.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Professional delivery mindset',
+    text: 'Work with clear requirements, architecture thinking, testing, documentation, review habits, and production-minded execution.',
   },
 ]
 
-const careerHighlights = [
-  'Remote-friendly project work',
-  'Startup-paced AI and engineering problems',
-  'Cloud, data, software, and embedded exposure',
-  'Room to grow with an early company',
+const futureHiringAreas = [
+  'AI & automation engineering',
+  'Cloud and data engineering',
+  'Software and API development',
+  'Firmware and embedded systems',
+  'QA automation and DevOps',
 ]
 
 function Brand() {
@@ -449,41 +455,48 @@ function App() {
         </section>
 
         <section className="careers-section" id="careers" aria-labelledby="careers-title">
-          <div className="section-inner careers-layout">
-            <div className="careers-copy">
+          <div className="section-inner careers-stack">
+            <div className="careers-heading">
               <p className="eyebrow">Careers</p>
-              <h2 id="careers-title">Build with a startup team solving real technical problems.</h2>
+              <h2 id="careers-title">Why join Cloud Data Tech LLC?</h2>
               <p>
-                Cloud Data Tech LLC is growing a practical engineering network across software,
-                AI, cloud, data, firmware, QA, and automation. We are interested in people who like
-                ownership, clear communication, and shipping dependable systems.
+                We are building a practical engineering company for people who want to solve real
+                business problems with AI, cloud, data, software, firmware, testing, and automation.
               </p>
-              <div className="career-highlights">
-                {careerHighlights.map((highlight) => (
-                  <span key={highlight}>
-                    <CheckCircle2 size={18} />
-                    {highlight}
-                  </span>
-                ))}
-              </div>
-              <a
-                className="button button-primary"
-                href={`mailto:${contactEmail}?subject=${encodeURIComponent('Career inquiry - Cloud Data Tech LLC')}`}
-              >
-                <Mail size={18} />
-                Send Resume
-              </a>
             </div>
-            <div className="career-grid">
-              {careerTracks.map(({ icon: Icon, title, text }) => (
-                <article className="career-card" key={title}>
-                  <div className="service-icon">
-                    <Icon size={24} />
-                  </div>
+
+            <div className="career-benefit-grid">
+              {careerBenefits.map(({ icon: Icon, title, text }) => (
+                <article className="career-benefit-card" key={title}>
+                  <Icon size={24} />
                   <h3>{title}</h3>
                   <p>{text}</p>
                 </article>
               ))}
+            </div>
+
+            <div className="openings-panel" aria-labelledby="openings-title">
+              <div className="openings-copy">
+                <p className="eyebrow">Current openings</p>
+                <h3 id="openings-title">No active openings right now.</h3>
+                <p>
+                  We are not listing role-specific positions today. As Cloud Data Tech LLC grows,
+                  we will add openings here. You can still share your resume so we can keep your
+                  profile for upcoming opportunities.
+                </p>
+              </div>
+              <div className="future-roles" aria-label="Future hiring areas">
+                {futureHiringAreas.map((area) => (
+                  <span key={area}>{area}</span>
+                ))}
+              </div>
+              <a
+                className="button button-primary"
+                href={`mailto:${contactEmail}?subject=${encodeURIComponent('Career profile - Cloud Data Tech LLC')}`}
+              >
+                <Mail size={18} />
+                Share Your Resume
+              </a>
             </div>
           </div>
         </section>
