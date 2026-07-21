@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" role="img" aria-label="Cloud Data Tech LLC">
+  <defs>
+    <linearGradient id="blue" x1="8" x2="66" y1="56" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1164dc" />
+      <stop offset="1" stop-color="#28b7f0" />
+    </linearGradient>
+    <linearGradient id="orange" x1="48" x2="92" y1="52" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f9733d" />
+      <stop offset="1" stop-color="#ffd36a" />
+    </linearGradient>
+  </defs>
+  <rect width="96" height="64" rx="8" fill="#ffffff" />
+  <path d="M19 39c0-11 9-20 22-20 6 0 11 2 15 6 5-12 15-19 28-18" fill="none" stroke="url(#blue)" stroke-linecap="round" stroke-width="8" />
+  <path d="M17 40c0 12 11 19 25 19 13 0 23-8 35-22" fill="none" stroke="url(#blue)" stroke-linecap="round" stroke-width="8" />
+  <path d="M49 49c9 9 26 9 37-2 10-10 9-25-2-32-13-8-29-2-47 18" fill="none" stroke="url(#orange)" stroke-linecap="round" stroke-width="8" />
+</svg>
