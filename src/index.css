@@ -1,0 +1,27 @@
+:root {
+  color: #132238;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  color: #ffffff;
+  background: #1168df;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(17, 104, 223, 0.42);
+  outline-offset: 3px;
+}
+
+img,
+svg {
+  display: block;
+}
+
+#root {
+  min-height: 100vh;
+}
