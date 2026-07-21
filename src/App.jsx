@@ -14,7 +14,6 @@ import {
   Menu,
   Rocket,
   Send,
-  Settings,
   ShieldCheck,
   Sparkles,
   TrendingUp,
@@ -27,120 +26,138 @@ import './App.css'
 const contactEmail = 'contact@clouddatatechllc.com'
 
 const navItems = [
-  { label: 'Services', href: '#services' },
-  { label: 'Approach', href: '#approach' },
-  { label: 'Capabilities', href: '#capabilities' },
+  { label: 'Solutions', href: '#solutions' },
+  { label: 'AI & Technology', href: '#technology' },
+  { label: 'Delivery', href: '#delivery' },
   { label: 'Careers', href: '#careers' },
   { label: 'Contact', href: '#contact' },
 ]
 
 const services = [
   {
-    icon: Cloud,
-    title: 'Cloud Consulting',
+    icon: Sparkles,
+    title: 'AI & Automation',
     description:
-      'Architecture, migration planning, cost optimization, platform modernization, and secure cloud operations.',
+      'AI assistants, workflow automation, intelligent search, LLM integrations, and practical governance for real business use.',
+  },
+  {
+    icon: Cloud,
+    title: 'Cloud & Platform Engineering',
+    description:
+      'AWS and Azure architecture, migrations, containers, serverless platforms, cost control, and reliable cloud operations.',
   },
   {
     icon: Database,
-    title: 'Data Engineering',
+    title: 'Data Platforms & Analytics',
     description:
-      'Reliable pipelines, analytics platforms, reporting layers, data quality controls, and decision-ready dashboards.',
+      'Data pipelines, warehouses, reporting layers, dashboards, quality controls, and analytics systems leaders can trust.',
   },
   {
     icon: Code2,
-    title: 'Application Development',
+    title: 'Product & App Engineering',
     description:
-      'Custom web, mobile, API, and backend systems built around practical business workflows and maintainable code.',
+      'Custom web apps, portals, APIs, integrations, backend services, and customer-facing products built for maintainability.',
   },
   {
     icon: Cpu,
-    title: 'Firmware & Embedded',
+    title: 'Firmware & Connected Systems',
     description:
-      'Device software, board bring-up support, OTA update flows, Linux services, automation hooks, and release tooling.',
+      'Embedded software, device services, Linux workflows, OTA support, release tooling, and connected product automation.',
   },
   {
     icon: ShieldCheck,
-    title: 'Cybersecurity Readiness',
+    title: 'Security, QA & DevOps',
     description:
-      'Security reviews, access controls, cloud hardening, vulnerability remediation, and compliance-minded delivery.',
-  },
-  {
-    icon: Settings,
-    title: 'QA & Automation',
-    description:
-      'Test strategy, CI/CD pipelines, regression suites, release validation, and operational observability.',
+      'Secure access, CI/CD, automated testing, monitoring, release validation, and production-readiness practices.',
   },
 ]
 
 const outcomes = [
-  { value: 'Cloud', label: 'Architecture and migration' },
-  { value: 'Data', label: 'Pipelines, reporting, analytics' },
-  { value: 'Dev', label: 'Apps, APIs, firmware' },
-  { value: 'Ops', label: 'Automation and support' },
+  { value: 'AI Strategy', label: 'Assistants, automation, LLM workflows' },
+  { value: 'Cloud Platforms', label: 'Architecture, migration, operations' },
+  { value: 'Data Intelligence', label: 'Pipelines, analytics, reporting' },
+  { value: 'Product Engineering', label: 'Apps, APIs, firmware, QA' },
 ]
 
 const heroMetrics = [
-  { value: '01', label: 'Strategy sprint' },
-  { value: '02', label: 'Build roadmap' },
-  { value: '03', label: 'Production launch' },
+  { value: '01', label: 'Assess the business and technology fit' },
+  { value: '02', label: 'Architect the AI, cloud, data, and product plan' },
+  { value: '03', label: 'Build, validate, and launch with confidence' },
 ]
 
 const startupFocus = [
   {
     icon: Sparkles,
-    title: 'Investor-ready story',
-    text: 'Clean product foundations, sharper demos, credible technical roadmaps, and data that supports the business case.',
+    title: 'Professional first impression',
+    text: 'A sharper website, product foundation, roadmap, and demo experience that helps a startup look serious from day one.',
   },
   {
     icon: Zap,
-    title: 'Fast MVP execution',
-    text: 'Focused releases that validate the highest-value workflow first, then scale into durable production systems.',
+    title: 'AI-ready systems',
+    text: 'Automation, data, and application architecture shaped so AI features can be useful, governed, and maintainable.',
   },
   {
     icon: TrendingUp,
-    title: 'Built to scale',
-    text: 'Cloud, data, automation, and embedded work shaped so today’s launch does not become tomorrow’s rebuild.',
+    title: 'Built to operate',
+    text: 'Cloud, software, firmware, QA, and DevOps decisions made with production reliability in mind, not just launch-day speed.',
   },
 ]
 
 const processSteps = [
   {
     icon: Users,
-    title: 'Discover',
-    text: 'Clarify goals, constraints, current systems, risks, and the highest-value path forward.',
+    title: 'Align',
+    text: 'Clarify business goals, users, systems, data, risks, and the most valuable outcome to deliver first.',
   },
   {
     icon: Layers,
-    title: 'Design',
-    text: 'Create a delivery plan with architecture, milestones, dependencies, and measurable outcomes.',
+    title: 'Architect',
+    text: 'Create the solution design, technology choices, delivery roadmap, milestones, and measurable success criteria.',
   },
   {
     icon: Rocket,
     title: 'Build',
-    text: 'Develop in focused iterations with demos, test coverage, reviews, and clear progress checkpoints.',
+    text: 'Develop in focused iterations with demos, code reviews, testing, documentation, and transparent progress checkpoints.',
   },
   {
     icon: ClipboardCheck,
-    title: 'Launch',
-    text: 'Deploy, validate, document, train, and keep the system healthy after release.',
+    title: 'Operate',
+    text: 'Deploy, validate, monitor, support handoff, and keep the system stable as users, data, and business needs grow.',
   },
 ]
 
 const capabilities = [
-  'AWS and Azure solution architecture',
-  'React, Node, Python, Java, and API platforms',
-  'SQL, NoSQL, ETL, BI, and reporting systems',
-  'Linux, device services, OTA, and firmware workflows',
-  'CI/CD, test automation, monitoring, and release management',
-  'Security reviews, identity, access, and cloud governance',
+  'AI assistants, LLM workflows, intelligent search, automation, and RAG patterns',
+  'AWS, Azure, serverless, containers, networking, identity, and cloud governance',
+  'React, Node.js, Python, Java, APIs, integrations, and backend platforms',
+  'SQL, NoSQL, ETL/ELT, BI dashboards, data quality, and reporting systems',
+  'IoT, Linux services, embedded software, firmware workflows, and OTA planning',
+  'CI/CD, QA automation, monitoring, access control, security reviews, and release management',
+]
+
+const deliverySignals = [
+  {
+    icon: Gauge,
+    title: 'Modernize',
+    text: 'Upgrade legacy workflows, improve performance, reduce manual work, and create room for AI-enabled operations.',
+  },
+  {
+    icon: Cloud,
+    title: 'Scale',
+    text: 'Move products and platforms toward secure, observable cloud architecture that can grow with the business.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Secure',
+    text: 'Strengthen identity, access, data protection, deployment discipline, and production review habits.',
+  },
 ]
 
 const careerTracks = [
   {
     icon: Code2,
-    title: 'Software Engineers',
-    text: 'Build web apps, APIs, integrations, dashboards, and internal platforms for startup and business clients.',
+    title: 'Software & AI Engineers',
+    text: 'Build web apps, APIs, AI-enabled workflows, integrations, dashboards, and internal platforms for business clients.',
   },
   {
     icon: Database,
@@ -156,8 +173,8 @@ const careerTracks = [
 
 const careerHighlights = [
   'Remote-friendly project work',
-  'Startup-paced engineering problems',
-  'Cloud, data, app, and embedded exposure',
+  'Startup-paced AI and engineering problems',
+  'Cloud, data, software, and embedded exposure',
   'Room to grow with an early company',
 ]
 
@@ -239,33 +256,33 @@ function App() {
           <div className="hero-overlay" />
           <div className="section-inner hero-inner">
             <div className="hero-content">
-              <p className="eyebrow">Startup-ready IT consulting & development</p>
-              <h1 id="hero-title">Cloud Data Tech LLC</h1>
+              <p className="eyebrow">Cloud Data Tech LLC</p>
+              <h1 id="hero-title">AI, cloud, data, software, and firmware engineering.</h1>
               <p className="hero-kicker">
-                Launch smarter cloud, data, app, and firmware systems.
+                Senior technology consulting and development for startups and growing businesses.
               </p>
               <p className="hero-copy">
-                We help founders and growing teams turn technical ideas into polished platforms,
-                automation, analytics, and connected products that are ready for real customers.
+                We design and build intelligent systems: AI automation, cloud platforms, data
+                pipelines, applications, APIs, embedded software, QA, security, and DevOps.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#contact">
                   <Send size={18} />
                   Request Consultation
                 </a>
-                <a className="button button-secondary" href="#services">
-                  Explore Services
+                <a className="button button-secondary" href="#solutions">
+                  Explore Solutions
                   <ArrowRight size={18} />
                 </a>
               </div>
               <div className="hero-proof" aria-label="Delivery strengths">
                 <span>
                   <CheckCircle2 size={18} />
-                  Strategy to delivery
+                  Strategy to production
                 </span>
                 <span>
                   <CheckCircle2 size={18} />
-                  Cloud, data, and embedded
+                  AI, cloud, data, embedded
                 </span>
                 <span>
                   <CheckCircle2 size={18} />
@@ -276,7 +293,7 @@ function App() {
             <div className="launch-board" aria-label="Startup delivery snapshot">
               <div className="launch-board-top">
                 <span className="status-dot" />
-                Launch pipeline
+                Engineering command center
               </div>
               <div className="launch-steps">
                 {heroMetrics.map((metric) => (
@@ -289,7 +306,7 @@ function App() {
               <div className="launch-meter" aria-hidden="true">
                 <span />
               </div>
-              <p>From first architecture call to a polished, production-minded launch plan.</p>
+              <p>From idea validation to production systems that look credible in front of customers.</p>
             </div>
           </div>
         </section>
@@ -308,11 +325,12 @@ function App() {
         <section className="startup-band" aria-labelledby="startup-title">
           <div className="section-inner startup-layout">
             <div className="startup-copy">
-              <p className="eyebrow">Startup focus</p>
-              <h2 id="startup-title">Make the first impression feel real, sharp, and ready.</h2>
+              <p className="eyebrow">Startup-ready engineering</p>
+              <h2 id="startup-title">Make the first impression feel experienced, not experimental.</h2>
               <p>
-                Startups need speed, but they also need systems that inspire confidence. We help
-                shape the technical foundation, customer experience, data story, and launch path.
+                Startups need speed, but prospects also look for clarity, depth, and execution
+                confidence. We help shape the technical foundation, product experience, data story,
+                and launch path so the business feels ready for serious conversations.
               </p>
             </div>
             <div className="startup-grid">
@@ -327,14 +345,15 @@ function App() {
           </div>
         </section>
 
-        <section className="section-block" id="services" aria-labelledby="services-title">
+        <section className="section-block" id="solutions" aria-labelledby="solutions-title">
           <div className="section-inner">
             <div className="section-heading">
-              <p className="eyebrow">Services</p>
-              <h2 id="services-title">Technology delivery that makes a young company look established.</h2>
+              <p className="eyebrow">Solutions</p>
+              <h2 id="solutions-title">One engineering partner across AI, cloud, data, apps, firmware, and operations.</h2>
               <p>
-                Whether you need a roadmap, a working product, a stronger platform, or a reliable
-                release process, Cloud Data Tech LLC can step in with senior engineering support.
+                Cloud Data Tech LLC helps turn business ideas into working technology: from AI
+                workflows and data platforms to secure cloud systems, customer applications, and
+                connected products.
               </p>
             </div>
             <div className="service-grid">
@@ -352,15 +371,15 @@ function App() {
           </div>
         </section>
 
-        <section className="approach-band" id="approach" aria-labelledby="approach-title">
+        <section className="approach-band" id="delivery" aria-labelledby="delivery-title">
           <div className="section-inner approach-layout">
             <div className="approach-copy">
-              <p className="eyebrow">Approach</p>
-              <h2 id="approach-title">Clear plans, strong engineering, fewer surprises.</h2>
+              <p className="eyebrow">Delivery</p>
+              <h2 id="delivery-title">Clear execution from first conversation to production support.</h2>
               <p>
-                Good consulting is not just advice. We pair technical direction with implementation
-                ownership, so strategy becomes shipped software, stable infrastructure, and systems
-                your team can maintain.
+                Good consulting is not just advice. We pair technology direction with hands-on
+                implementation so strategy becomes shipped software, stable infrastructure, and
+                systems your team can maintain.
               </p>
               <a className="text-link" href="#contact">
                 Talk through your roadmap
@@ -383,14 +402,15 @@ function App() {
           </div>
         </section>
 
-        <section className="section-block capabilities-section" id="capabilities" aria-labelledby="capabilities-title">
+        <section className="section-block capabilities-section" id="technology" aria-labelledby="technology-title">
           <div className="section-inner capabilities-layout">
             <div className="capability-panel">
-              <p className="eyebrow">Capabilities</p>
-              <h2 id="capabilities-title">Built for modern cloud, data, app, and device work.</h2>
+              <p className="eyebrow">AI & Technology</p>
+              <h2 id="technology-title">Modern engineering depth without locking you into one narrow stack.</h2>
               <p>
-                We support both greenfield development and modernization across business systems,
-                cloud infrastructure, data platforms, automation, and embedded software workflows.
+                The technology stack should match the business outcome. We support greenfield
+                development, modernization, automation, AI-enabled workflows, cloud infrastructure,
+                data platforms, and embedded software delivery.
               </p>
               <div className="capability-actions">
                 <a className="button button-primary" href={`mailto:${contactEmail}`}>
@@ -413,25 +433,17 @@ function App() {
         <section className="insight-band" aria-labelledby="insight-title">
           <div className="section-inner insight-layout">
             <div>
-              <p className="eyebrow">Engagement fit</p>
-              <h2 id="insight-title">A practical partner for projects that cross software and operations.</h2>
+              <p className="eyebrow">Working standards</p>
+              <h2 id="insight-title">Credibility comes from how the work is planned, built, secured, and supported.</h2>
             </div>
             <div className="insight-grid">
-              <article>
-                <Gauge size={24} />
-                <h3>Modernize</h3>
-                <p>Upgrade legacy workflows, improve speed, and reduce operating friction.</p>
-              </article>
-              <article>
-                <Cloud size={24} />
-                <h3>Scale</h3>
-                <p>Move platforms to resilient cloud architecture with room for growth.</p>
-              </article>
-              <article>
-                <ShieldCheck size={24} />
-                <h3>Secure</h3>
-                <p>Strengthen identity, access, deployments, data protection, and review habits.</p>
-              </article>
+              {deliverySignals.map(({ icon: Icon, title, text }) => (
+                <article key={title}>
+                  <Icon size={24} />
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -443,7 +455,7 @@ function App() {
               <h2 id="careers-title">Build with a startup team solving real technical problems.</h2>
               <p>
                 Cloud Data Tech LLC is growing a practical engineering network across software,
-                cloud, data, firmware, QA, and automation. We are interested in people who like
+                AI, cloud, data, firmware, QA, and automation. We are interested in people who like
                 ownership, clear communication, and shipping dependable systems.
               </p>
               <div className="career-highlights">
@@ -511,13 +523,13 @@ function App() {
               </label>
               <label>
                 Project type
-                <select name="service" defaultValue="Cloud consulting">
+                <select name="service" defaultValue="AI and automation">
+                  <option>AI and automation</option>
                   <option>Cloud consulting</option>
                   <option>Data engineering</option>
                   <option>Application development</option>
                   <option>Firmware and embedded</option>
-                  <option>QA and automation</option>
-                  <option>Cybersecurity readiness</option>
+                  <option>Security, QA and DevOps</option>
                 </select>
               </label>
               <label className="full-field">
@@ -539,7 +551,7 @@ function App() {
           <div className="footer-links">
             <a href="https://clouddatatechllc.com">clouddatatechllc.com</a>
           </div>
-          <p>Cloud consulting, data platforms, software development, firmware, and automation.</p>
+          <p>AI automation, cloud platforms, data engineering, software development, firmware, and DevOps.</p>
         </div>
       </footer>
     </div>
