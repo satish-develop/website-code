@@ -472,7 +472,6 @@ function App() {
           <FooterBrand />
           <div className="footer-links">
             <a href="https://clouddatatechllc.com">clouddatatechllc.com</a>
-            <a href="https://cybertranstechllc.com">cybertranstechllc.com</a>
           </div>
           <p>Cloud consulting, data platforms, software development, firmware, and automation.</p>
         </div>
