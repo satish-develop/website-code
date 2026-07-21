@@ -1,16 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" role="img" aria-label="Cloud Data Tech LLC">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 72" role="img" aria-label="Cloud Data Tech LLC">
   <defs>
-    <linearGradient id="blue" x1="8" x2="66" y1="56" y2="10" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1164dc" />
-      <stop offset="1" stop-color="#28b7f0" />
+    <linearGradient id="blue" x1="12" y1="58" x2="58" y2="12" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1767de" />
+      <stop offset="1" stop-color="#5bd8e9" />
     </linearGradient>
-    <linearGradient id="orange" x1="48" x2="92" y1="52" y2="18" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f9733d" />
-      <stop offset="1" stop-color="#ffd36a" />
+    <linearGradient id="orange" x1="48" y1="58" x2="90" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2733f" />
+      <stop offset="1" stop-color="#ffd96d" />
     </linearGradient>
   </defs>
-  <rect width="96" height="64" rx="8" fill="#ffffff" />
-  <path d="M19 39c0-11 9-20 22-20 6 0 11 2 15 6 5-12 15-19 28-18" fill="none" stroke="url(#blue)" stroke-linecap="round" stroke-width="8" />
-  <path d="M17 40c0 12 11 19 25 19 13 0 23-8 35-22" fill="none" stroke="url(#blue)" stroke-linecap="round" stroke-width="8" />
-  <path d="M49 49c9 9 26 9 37-2 10-10 9-25-2-32-13-8-29-2-47 18" fill="none" stroke="url(#orange)" stroke-linecap="round" stroke-width="8" />
+  <rect width="96" height="72" rx="14" fill="#ffffff" />
+  <path d="M32 27c12-24 34-28 50-12" fill="none" stroke="url(#blue)" stroke-width="8" stroke-linecap="round" />
+  <path d="M18 36c0-17 19-29 40-19-21-1-36 9-36 23 0 12 14 18 31 13 11-3 21-11 31-23-17 29-44 43-64 31-11-6-16-15-14-25" fill="url(#blue)" />
+  <path d="M44 53c16-17 36-31 51-19 13 10 7 31-14 36 13-10 18-25 9-33-10-8-26 0-46 16z" fill="url(#orange)" />
+  <path d="M42 60c14 9 34 6 43-8-10 19-35 25-53 12z" fill="url(#orange)" />
 </svg>

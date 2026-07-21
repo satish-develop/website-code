@@ -135,57 +135,10 @@ const capabilities = [
   'Security reviews, identity, access, and cloud governance',
 ]
 
-function BrandMark() {
-  return (
-    <svg
-      className="brand-mark"
-      viewBox="0 0 96 64"
-      role="img"
-      aria-label="Cloud Data Tech LLC logo mark"
-    >
-      <defs>
-        <linearGradient id="brand-blue" x1="8" x2="66" y1="56" y2="10">
-          <stop offset="0%" stopColor="#1164dc" />
-          <stop offset="100%" stopColor="#28b7f0" />
-        </linearGradient>
-        <linearGradient id="brand-orange" x1="48" x2="92" y1="52" y2="18">
-          <stop offset="0%" stopColor="#f9733d" />
-          <stop offset="100%" stopColor="#ffd36a" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M19 39c0-11 9-20 22-20 6 0 11 2 15 6 5-12 15-19 28-18"
-        fill="none"
-        stroke="url(#brand-blue)"
-        strokeLinecap="round"
-        strokeWidth="8"
-      />
-      <path
-        d="M17 40c0 12 11 19 25 19 13 0 23-8 35-22"
-        fill="none"
-        stroke="url(#brand-blue)"
-        strokeLinecap="round"
-        strokeWidth="8"
-      />
-      <path
-        d="M49 49c9 9 26 9 37-2 10-10 9-25-2-32-13-8-29-2-47 18"
-        fill="none"
-        stroke="url(#brand-orange)"
-        strokeLinecap="round"
-        strokeWidth="8"
-      />
-    </svg>
-  )
-}
-
 function Brand() {
   return (
     <a className="brand" href="#top" aria-label="Cloud Data Tech LLC home">
-      <BrandMark />
-      <span className="brand-copy">
-        <strong>Cloud Data</strong>
-        <span>Tech LLC</span>
-      </span>
+      <img className="brand-logo" src="/assets/cloud-data-tech-logo-header.svg" alt="Cloud Data Tech LLC" />
     </a>
   )
 }
@@ -193,11 +146,7 @@ function Brand() {
 function FooterBrand() {
   return (
     <a className="brand brand-compact" href="#top" aria-label="Cloud Data Tech LLC home">
-      <BrandMark />
-      <span className="brand-copy">
-        <strong>Cloud Data</strong>
-        <span>Tech LLC</span>
-      </span>
+      <img className="brand-logo" src="/assets/cloud-data-tech-logo-header.svg" alt="Cloud Data Tech LLC" />
     </a>
   )
 }
