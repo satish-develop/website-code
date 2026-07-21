@@ -774,6 +774,94 @@ button {
   color: var(--orange);
 }
 
+.careers-section {
+  padding: 92px 0;
+  background:
+    linear-gradient(180deg, #ffffff, #f5fbff),
+    var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.careers-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.careers-copy h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 2.72rem;
+  line-height: 1.12;
+}
+
+.careers-copy p:not(.eyebrow) {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.07rem;
+  line-height: 1.72;
+}
+
+.career-highlights {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 30px;
+}
+
+.career-highlights span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #26374d;
+  font-weight: 740;
+}
+
+.career-highlights svg {
+  color: var(--teal);
+  flex: 0 0 auto;
+}
+
+.career-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.career-card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 18px;
+  min-height: 142px;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(21, 44, 74, 0.07);
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.career-card:hover {
+  border-color: #b9d3f5;
+  box-shadow: 0 22px 54px rgba(21, 44, 74, 0.11);
+  transform: translateY(-3px);
+}
+
+.career-card h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 1.16rem;
+  line-height: 1.25;
+}
+
+.career-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
 .contact-section {
   background: var(--paper);
 }
@@ -849,6 +937,7 @@ button {
   .outcome-item,
   .service-card,
   .process-item,
+  .career-card,
   .capability-item {
     transition: none;
   }
@@ -957,6 +1046,7 @@ button {
   .approach-layout,
   .capabilities-layout,
   .insight-layout,
+  .careers-layout,
   .contact-layout,
   .footer-layout {
     grid-template-columns: 1fr;
@@ -976,6 +1066,7 @@ button {
   .approach-copy h2,
   .capability-panel h2,
   .insight-layout h2,
+  .careers-copy h2,
   .contact-copy h2 {
     font-size: 2.25rem;
   }
@@ -1111,7 +1202,8 @@ button {
 
   .section-block,
   .startup-band,
-  .approach-band {
+  .approach-band,
+  .careers-section {
     padding: 70px 0;
   }
 
@@ -1120,6 +1212,7 @@ button {
   .approach-copy h2,
   .capability-panel h2,
   .insight-layout h2,
+  .careers-copy h2,
   .contact-copy h2 {
     font-size: 1.92rem;
     line-height: 1.18;
@@ -1128,6 +1221,7 @@ button {
   .service-card,
   .startup-card,
   .process-item,
+  .career-card,
   .capability-panel,
   .contact-form,
   .insight-grid article {
@@ -1141,6 +1235,10 @@ button {
   .process-icon {
     width: 46px;
     height: 46px;
+  }
+
+  .career-card {
+    grid-template-columns: 46px minmax(0, 1fr);
   }
 }
 

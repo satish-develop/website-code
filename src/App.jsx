@@ -30,6 +30,7 @@ const navItems = [
   { label: 'Services', href: '#services' },
   { label: 'Approach', href: '#approach' },
   { label: 'Capabilities', href: '#capabilities' },
+  { label: 'Careers', href: '#careers' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -133,6 +134,31 @@ const capabilities = [
   'Linux, device services, OTA, and firmware workflows',
   'CI/CD, test automation, monitoring, and release management',
   'Security reviews, identity, access, and cloud governance',
+]
+
+const careerTracks = [
+  {
+    icon: Code2,
+    title: 'Software Engineers',
+    text: 'Build web apps, APIs, integrations, dashboards, and internal platforms for startup and business clients.',
+  },
+  {
+    icon: Database,
+    title: 'Cloud & Data Engineers',
+    text: 'Design cloud architecture, data pipelines, analytics systems, automation, and reliable operating workflows.',
+  },
+  {
+    icon: Cpu,
+    title: 'Firmware & QA Specialists',
+    text: 'Support embedded systems, Linux services, device validation, CI/CD, release testing, and automation.',
+  },
+]
+
+const careerHighlights = [
+  'Remote-friendly project work',
+  'Startup-paced engineering problems',
+  'Cloud, data, app, and embedded exposure',
+  'Room to grow with an early company',
 ]
 
 function Brand() {
@@ -406,6 +432,46 @@ function App() {
                 <h3>Secure</h3>
                 <p>Strengthen identity, access, deployments, data protection, and review habits.</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="careers-section" id="careers" aria-labelledby="careers-title">
+          <div className="section-inner careers-layout">
+            <div className="careers-copy">
+              <p className="eyebrow">Careers</p>
+              <h2 id="careers-title">Build with a startup team solving real technical problems.</h2>
+              <p>
+                Cloud Data Tech LLC is growing a practical engineering network across software,
+                cloud, data, firmware, QA, and automation. We are interested in people who like
+                ownership, clear communication, and shipping dependable systems.
+              </p>
+              <div className="career-highlights">
+                {careerHighlights.map((highlight) => (
+                  <span key={highlight}>
+                    <CheckCircle2 size={18} />
+                    {highlight}
+                  </span>
+                ))}
+              </div>
+              <a
+                className="button button-primary"
+                href={`mailto:${contactEmail}?subject=${encodeURIComponent('Career inquiry - Cloud Data Tech LLC')}`}
+              >
+                <Mail size={18} />
+                Send Resume
+              </a>
+            </div>
+            <div className="career-grid">
+              {careerTracks.map(({ icon: Icon, title, text }) => (
+                <article className="career-card" key={title}>
+                  <div className="service-icon">
+                    <Icon size={24} />
+                  </div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
