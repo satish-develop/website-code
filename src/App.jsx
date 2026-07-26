@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   ArrowRight,
+  ArrowUp,
   CheckCircle2,
   ClipboardCheck,
   Cloud,
@@ -202,8 +203,23 @@ function FooterBrand() {
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
+
+  useEffect(() => {
+    const updateBackToTop = () => setShowBackToTop(window.scrollY > 500)
+
+    updateBackToTop()
+    window.addEventListener('scroll', updateBackToTop, { passive: true })
+
+    return () => window.removeEventListener('scroll', updateBackToTop)
+  }, [])
+
+  const scrollToTop = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' })
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -573,6 +589,18 @@ function App() {
           <p>AI automation, cloud platforms, data engineering, software development, firmware, and DevOps.</p>
         </div>
       </footer>
+
+      {showBackToTop && (
+        <button
+          className="back-to-top"
+          type="button"
+          aria-label="Back to top"
+          title="Back to top"
+          onClick={scrollToTop}
+        >
+          <ArrowUp size={22} strokeWidth={2.5} aria-hidden="true" />
+        </button>
+      )}
     </div>
   )
 }
