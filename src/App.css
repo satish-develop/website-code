@@ -974,10 +974,19 @@ button {
 }
 
 .contact-methods a,
-.contact-methods span {
+.contact-methods span,
+.contact-address {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+}
+
+.contact-address {
+  align-items: flex-start;
+}
+
+.contact-address address {
+  font-style: normal;
 }
 
 .contact-methods svg {

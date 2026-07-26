@@ -515,10 +515,16 @@ function App() {
                   <Mail size={20} />
                   {contactEmail}
                 </a>
-                <span>
+                <div className="contact-address">
                   <MapPin size={20} />
-                  United States
-                </span>
+                  <address>
+                    2770, Main St
+                    <br />
+                    Suite 236
+                    <br />
+                    Frisco, TX-75033
+                  </address>
+                </div>
               </div>
             </div>
             <form className="contact-form" onSubmit={handleSubmit}>
