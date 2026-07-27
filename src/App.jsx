@@ -586,7 +586,7 @@ function App() {
         <div className="section-inner footer-layout">
           <FooterBrand />
           <div className="footer-links">
-            <a href="https://clouddatatechllc.com">clouddatatechllc.com</a>
+            <a href="https://www.clouddatatechllc.com">www.clouddatatechllc.com</a>
           </div>
           <p>AI automation, cloud platforms, data engineering, software development, firmware, and DevOps.</p>
         </div>
