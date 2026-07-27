@@ -3,6 +3,8 @@ import {
   ArrowRight,
   ArrowUp,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   ClipboardCheck,
   Cloud,
   Code2,
@@ -13,6 +15,8 @@ import {
   Mail,
   MapPin,
   Menu,
+  Pause,
+  Play,
   Rocket,
   Send,
   ShieldCheck,
@@ -80,6 +84,33 @@ const outcomes = [
   { value: 'Cloud Platforms', label: 'Architecture, migration, operations' },
   { value: 'Data Intelligence', label: 'Pipelines, analytics, reporting' },
   { value: 'Product Engineering', label: 'Apps, APIs, firmware, QA' },
+]
+
+const companyHighlights = [
+  {
+    icon: TrendingUp,
+    kicker: 'Established in 2016',
+    title: 'Experience built through practical technology delivery.',
+    text: 'Since 2016, Cloud Data Tech LLC has helped organizations plan, build, modernize, and support dependable digital systems.',
+  },
+  {
+    icon: Layers,
+    kicker: 'Full-service IT capabilities',
+    title: 'Multiple technology services through one trusted partner.',
+    text: 'Our capabilities span AI and automation, cloud, data, applications, APIs, firmware, QA, security readiness, and DevOps.',
+  },
+  {
+    icon: Users,
+    kicker: 'End-to-end support',
+    title: 'Support from the first idea through production.',
+    text: 'We help with discovery, architecture, implementation, testing, deployment, monitoring, modernization, and ongoing improvement.',
+  },
+  {
+    icon: Rocket,
+    kicker: 'Flexible engagement',
+    title: 'Engineering support shaped around business priorities.',
+    text: 'Engage us for focused consulting, project delivery, platform modernization, or ongoing technical support as your needs evolve.',
+  },
 ]
 
 const heroMetrics = [
@@ -206,6 +237,12 @@ function FooterBrand() {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [showBackToTop, setShowBackToTop] = useState(false)
+  const [activeHighlight, setActiveHighlight] = useState(0)
+  const [carouselPlaying, setCarouselPlaying] = useState(
+    () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  )
+  const [carouselHovered, setCarouselHovered] = useState(false)
+  const [carouselFocused, setCarouselFocused] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -217,6 +254,18 @@ function App() {
 
     return () => window.removeEventListener('scroll', updateBackToTop)
   }, [])
+
+  useEffect(() => {
+    if (!carouselPlaying || carouselHovered || carouselFocused) {
+      return undefined
+    }
+
+    const timer = window.setTimeout(() => {
+      setActiveHighlight((current) => (current + 1) % companyHighlights.length)
+    }, 6500)
+
+    return () => window.clearTimeout(timer)
+  }, [activeHighlight, carouselPlaying, carouselFocused, carouselHovered])
 
   const scrollToTop = () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -246,6 +295,9 @@ function App() {
 
     window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`
   }
+
+  const activeCompanyHighlight = companyHighlights[activeHighlight]
+  const ActiveHighlightIcon = activeCompanyHighlight.icon
 
   return (
     <div className="site-shell" id="top">
@@ -343,6 +395,91 @@ function App() {
                 <span>{item.label}</span>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="company-highlights" aria-label="Company highlights">
+          <div className="section-inner">
+            <div
+              className="highlight-carousel"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Cloud Data Tech company highlights"
+              onMouseEnter={() => setCarouselHovered(true)}
+              onMouseLeave={() => setCarouselHovered(false)}
+              onFocusCapture={() => setCarouselFocused(true)}
+              onBlurCapture={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setCarouselFocused(false)
+                }
+              }}
+            >
+              <article
+                className="highlight-slide"
+                aria-roledescription="slide"
+                aria-label={`${activeHighlight + 1} of ${companyHighlights.length}`}
+                key={activeCompanyHighlight.kicker}
+              >
+                <div className="highlight-icon" aria-hidden="true">
+                  <ActiveHighlightIcon size={30} />
+                </div>
+                <div className="highlight-copy">
+                  <p className="highlight-kicker">{activeCompanyHighlight.kicker}</p>
+                  <h2>{activeCompanyHighlight.title}</h2>
+                  <p>{activeCompanyHighlight.text}</p>
+                </div>
+              </article>
+
+              <div className="carousel-controls" aria-label="Company highlight controls">
+                <button
+                  className="carousel-control"
+                  type="button"
+                  aria-label="Previous company highlight"
+                  onClick={() =>
+                    setActiveHighlight(
+                      (current) => (current - 1 + companyHighlights.length) % companyHighlights.length,
+                    )
+                  }
+                >
+                  <ChevronLeft size={20} aria-hidden="true" />
+                </button>
+                <div className="carousel-dots" aria-label="Choose a company highlight">
+                  {companyHighlights.map((highlight, index) => (
+                    <button
+                      className={`carousel-dot ${index === activeHighlight ? 'is-active' : ''}`}
+                      type="button"
+                      aria-label={`Show highlight ${index + 1}: ${highlight.kicker}`}
+                      aria-current={index === activeHighlight ? 'true' : undefined}
+                      key={highlight.kicker}
+                      onClick={() => setActiveHighlight(index)}
+                    />
+                  ))}
+                </div>
+                <button
+                  className="carousel-control"
+                  type="button"
+                  aria-label={carouselPlaying ? 'Pause company highlights' : 'Play company highlights'}
+                  title={carouselPlaying ? 'Pause highlights' : 'Play highlights'}
+                  onClick={() => setCarouselPlaying((playing) => !playing)}
+                >
+                  {carouselPlaying ? (
+                    <Pause size={18} aria-hidden="true" />
+                  ) : (
+                    <Play size={18} aria-hidden="true" />
+                  )}
+                </button>
+                <button
+                  className="carousel-control"
+                  type="button"
+                  aria-label="Next company highlight"
+                  onClick={() =>
+                    setActiveHighlight((current) => (current + 1) % companyHighlights.length)
+                  }
+                >
+                  <ChevronRight size={20} aria-hidden="true" />
+                </button>
+              </div>
+            </div>
           </div>
         </section>
 
