@@ -24,7 +24,7 @@ import {
 } from 'lucide-react'
 import './App.css'
 
-const contactEmail = 'contact@clouddatatechllc.com'
+const contactEmail = 'Info@clouddatatechllc.com'
 
 const navItems = [
   { label: 'Solutions', href: '#solutions' },

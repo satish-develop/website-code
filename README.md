@@ -21,4 +21,4 @@ npm run preview
 - Primary app code: `src/App.jsx`
 - Site styles: `src/App.css`
 - Generated hero image: `public/assets/cloud-data-hero.png`
-- Contact form opens a prepared email to `contact@clouddatatechllc.com`
+- Contact form opens a prepared email to `Info@clouddatatechllc.com`
