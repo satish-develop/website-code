@@ -34,6 +34,8 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const footerNavItems = [{ label: 'Home', href: '#top' }, ...navItems]
+
 const services = [
   {
     icon: Sparkles,
@@ -584,11 +586,27 @@ function App() {
 
       <footer className="site-footer">
         <div className="section-inner footer-layout">
-          <FooterBrand />
-          <div className="footer-links">
+          <div className="footer-brand-block">
+            <FooterBrand />
+          </div>
+          <nav className="footer-navigation" aria-label="Footer navigation">
+            <p className="footer-heading">Quick Links</p>
+            <div className="footer-links">
+              {footerNavItems.map((item) => (
+                <a href={item.href} key={item.href}>
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </nav>
+          <div className="footer-contact">
+            <p className="footer-heading">Contact</p>
+            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
             <a href="https://www.clouddatatechllc.com">www.clouddatatechllc.com</a>
           </div>
-          <p>AI automation, cloud platforms, data engineering, software development, firmware, and DevOps.</p>
+        </div>
+        <div className="section-inner footer-bottom">
+          <p>© {new Date().getFullYear()} Cloud Data Tech LLC. All rights reserved.</p>
         </div>
       </footer>
 

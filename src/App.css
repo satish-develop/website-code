@@ -1082,41 +1082,80 @@ button {
 }
 
 .site-footer {
-  padding: 34px 0;
+  padding: 48px 0 0;
   color: #dbe7f8;
   background: #101b2c;
 }
 
 .footer-layout {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 26px;
-  align-items: center;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(340px, 1.2fr) minmax(240px, 0.9fr);
+  gap: 48px;
+  align-items: start;
 }
 
 .site-footer .brand {
   color: var(--paper);
 }
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px 22px;
-  font-weight: 700;
+.footer-heading {
+  margin: 0 0 16px;
+  color: var(--paper);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.footer-links a:hover {
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 12px 28px;
+  color: #c8d8eb;
+  font-weight: 650;
+}
+
+.footer-links a,
+.footer-contact a {
+  width: fit-content;
+  transition: color 160ms ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
   color: #8ee7dd;
 }
 
-.site-footer p {
-  max-width: 340px;
+.footer-links a:focus-visible,
+.footer-contact a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 12px;
+  color: #c8d8eb;
+  font-weight: 650;
+}
+
+.footer-contact .footer-heading {
+  margin-bottom: 4px;
+}
+
+.footer-bottom {
+  margin-top: 42px;
+  padding: 20px 0 24px;
+  border-top: 1px solid rgba(214, 225, 238, 0.16);
+}
+
+.footer-bottom p {
   margin: 0;
-  color: #b8c8dc;
-  font-size: 0.94rem;
+  color: #91a7c2;
+  font-size: 0.86rem;
   line-height: 1.5;
-  text-align: right;
+  text-align: center;
 }
 
 .back-to-top {
@@ -1237,13 +1276,8 @@ button {
     align-items: start;
   }
 
-  .site-footer p {
-    max-width: none;
-    text-align: left;
-  }
-
-  .footer-links {
-    justify-content: flex-start;
+  .footer-layout {
+    gap: 34px;
   }
 }
 
@@ -1414,6 +1448,10 @@ button {
   .brand-logo {
     width: 150px;
     height: 50px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
   }
 
   .hero-section h1 {
