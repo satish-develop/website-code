@@ -398,7 +398,7 @@ function App() {
           </div>
         </section>
 
-        <section className="company-highlights" aria-label="Company highlights">
+        <section className="company-highlights" id="company-highlights" aria-label="Company highlights">
           <div className="section-inner">
             <div
               className="highlight-carousel"
@@ -458,6 +458,16 @@ function App() {
                 <button
                   className="carousel-control"
                   type="button"
+                  aria-label="Next company highlight"
+                  onClick={() =>
+                    setActiveHighlight((current) => (current + 1) % companyHighlights.length)
+                  }
+                >
+                  <ChevronRight size={20} aria-hidden="true" />
+                </button>
+                <button
+                  className="carousel-control carousel-toggle"
+                  type="button"
                   aria-label={carouselPlaying ? 'Pause company highlights' : 'Play company highlights'}
                   title={carouselPlaying ? 'Pause highlights' : 'Play highlights'}
                   onClick={() => setCarouselPlaying((playing) => !playing)}
@@ -467,16 +477,6 @@ function App() {
                   ) : (
                     <Play size={18} aria-hidden="true" />
                   )}
-                </button>
-                <button
-                  className="carousel-control"
-                  type="button"
-                  aria-label="Next company highlight"
-                  onClick={() =>
-                    setActiveHighlight((current) => (current + 1) % companyHighlights.length)
-                  }
-                >
-                  <ChevronRight size={20} aria-hidden="true" />
                 </button>
               </div>
             </div>
